@@ -1,6 +1,6 @@
 # Woddy
 
-Woddy is an Electron Application to check and clean the available memory on macOS
+Woddy is an Electron Application to check and clean the available memory on macOS, download it [here](https://github.com/chukitow/woddy/releases/tag/1.0).
 
 ## Contributing
 
