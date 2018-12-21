@@ -1,0 +1,24 @@
+{
+  "name": "Woddy",
+  "version": "1.0.0",
+  "description": "Memory RAM Status and cleaner",
+  "main": "index.js",
+  "author": "Ivan Velasquez <ivan.velasquez.rios@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-free": "^1.0.0",
+    "sudo-prompt": "^8.2.5"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "devDependencies": {
+    "electron": "^4.0.0",
+    "electron-builder": "^20.38.4"
+  },
+  "build": {
+    "appId": "com.chukitow.woddy"
+  }
+}
