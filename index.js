@@ -9,24 +9,26 @@ let tray;
 app.on('ready', () => {
   app.dock.hide();
   tray = new Tray(path.join(__dirname, './assets/icons/icon_16x16.png'));
-  tray.setTitle(`${bytesToGb(memory.free())} GB`);
+  setTitle();
   buildMenu();
   setInterval(() => {
-    tray.setTitle(`${bytesToGb(memory.free())} GB`);
+    setTitle();
     buildMenu();
   }, 10000);
 });
 
-const bytesToGb = (bytes) => (bytes / 1073741824).toFixed(2);
+const bytesToGb = (bytes) => `${(bytes / 1073741824).toFixed(2)} GB`;
+
+const setTitle = () => tray.setTitle(bytesToGb(memory.free()));
 
 const buildMenu = () => {
   const contextMenu = Menu.buildFromTemplate([
     {
-      label: `Total ${bytesToGb(memory.total())} GB`,
+      label: `Total ${bytesToGb(memory.total())}`,
       enabled: false,
     },
     {
-      label: `Used ${bytesToGb(memory.used())} GB`,
+      label: `Used ${bytesToGb(memory.used())}`,
       enabled: false,
     },
     {
@@ -36,7 +38,9 @@ const buildMenu = () => {
           name: 'Memory Status',
           icns: path.join(__dirname, './assets/icons/icon_512x512.png')
         },
-        (error, stdout, stderr) => {});
+        (error, stdout, stderr) => {
+          setTitle();
+        });
       }
     },
     {

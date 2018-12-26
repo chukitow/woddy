@@ -1,6 +1,6 @@
 {
   "name": "Woddy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Memory RAM Status and cleaner",
   "main": "index.js",
   "author": "Ivan Velasquez <ivan.velasquez.rios@gmail.com>",
